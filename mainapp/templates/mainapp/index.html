@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Расчет стоимости доставки</title>
+</head>
+<body>
+<form action="{% url 'main:index' %}" method="get">
+    {{ form.as_p }}
+    <button type="submit">Расчитать</button>
+</form>
+{% if result %}
+    {% for result_row in result %}
+        {{ result_row }}<br>
+    {% endfor %}
+{% endif %}
+</body>
+</html>
